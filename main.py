@@ -1,26 +1,20 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import NumericProperty, ReferenceListProperty
-from kivy.vector import Vector
+from kivy.uix.boxlayout import BoxLayout
 
 
-class PongBall(Widget):
-    velocity_x = NumericProperty(0)
-    velocity_y = NumericProperty(0)
-    velocity = ReferenceListProperty(velocity_x, velocity_y)
+class Andrzej(BoxLayout):
+    pass
 
-    def move(self):
-        self.pos = Vector(*self.velocity) + self.pos
-
-
-class PongGame(Widget):
+class MetUI(Widget):
     pass
 
 
-class PongApp(App):
+class MetApp(App):
     def build(self):
-        return PongGame()
+        return MetUI(Andrzej)
+
 
 
 if __name__ == '__main__':
-    PongApp().run()
+    MetApp().run()
