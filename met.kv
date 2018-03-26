@@ -1,18 +1,24 @@
 #:kivy 1.10.0
 
-Andrzej:
+<PlotClass>:
+	canvas.before:
+		Color:
+			rgba: .8, 1, 0, .5
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	Label:
+		text_size: self.size
+		text: 'Output Screen'
 
 <MetUI>:
-    size: 150, 50
-    <Andrzej>:
-        Button:
-            text: '2'
-
+    size: 300, 100
+	PlotClass:
     BoxLayout:
         cols: 2
         Label:
-            text: 'andrzej'
+            text: 'Parameter 1: '
 
         Label:
-            text: 'marek'
+            text: 'Parameter 2: '
 
