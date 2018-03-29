@@ -1,5 +1,8 @@
 #:kivy 1.10.0
 
+<Test>:
+
+
 <PlotClass>:
 	canvas.before:
 		Color:
@@ -14,9 +17,11 @@
 <MetUI>:
     size: 300, 100
 	PlotClass:
+		id: test
     BoxLayout:
         cols: 2
-        Label:
+        Button:
+			on_touch_down: test.DrawDifferent()
             text: 'Parameter 1: '
 
         Label:
