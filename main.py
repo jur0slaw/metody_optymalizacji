@@ -14,6 +14,9 @@ from PSOAlgorithm import PSOAlgorithm
 
 some_data = [1,2,3]
 
+fig, ax = plt.subplots()
+canvas = fig.canvas
+
    
 
 class PlotClass(FloatLayout):
@@ -21,14 +24,16 @@ class PlotClass(FloatLayout):
         for i in range(0,len(some_data)):
             some_data[i]+=1
         print(some_data)
-        plt.plot(some_data, some_data, 'go-', label='line 1', linewidth=50)
+        plt.clf()
+        plt.plot(some_data, some_data, 'go-', label='line 1', linewidth=2)
+        canvas.draw_idle()
         
-        
-    plt.plot(some_data, some_data, 'go-', label='line 1', linewidth=2)
     def __init__(self, **kwargs): 
         super(PlotClass, self).__init__(**kwargs)
         #plt.show()
-        self.add_widget(FigureCanvasKivy(plt.gcf()))
+        plt.plot(some_data, some_data, 'go-', label='line 1', linewidth=2)
+        self.add_widget(canvas)
+    
 
 class MetUI(BoxLayout):
     pass
